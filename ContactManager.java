@@ -1,6 +1,29 @@
+// Import necessary classes
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+// Define the Contact class
+class Contact {
+    private String name;
+    private String phoneNumber;
+    // Other contact details can be added
+
+    // Constructor
+    public Contact(String name, String phoneNumber) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+    }
+
+    // Getters
+    public String getName() {
+        return name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+}
 
 // Define the ContactManager class
 class ContactManager {
@@ -34,14 +57,8 @@ class ContactManager {
 
     // Method to list all Contacts
     public void listContacts() {
-        if (contacts.isEmpty()) {
-            System.out.println("No contacts available.");
-        } else {
-            System.out.println("List of Contacts:");
-            for (Contact contact : contacts) {
-                System.out.println(contact);
-            }
-            System.out.println("------------");
-        }
+        // Your code here
     }
+
+
 }

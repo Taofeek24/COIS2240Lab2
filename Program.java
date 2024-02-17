@@ -1,47 +1,20 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-// Define the ContactManager class
-class ContactManager {
-    // List to store Contact objects
-    private List<Contact> contacts;
-
-    // Constructor to initialize the ContactManager
-    public ContactManager() {
-        contacts = new ArrayList<>();
-    }
-
-    // Method to add a new Contact
-    public void addContact(Contact contact) {
-        contacts.add(contact);
-        System.out.println("Contact added: " + contact.getName());
-    }
-
-    // Method to remove a Contact by name
-    public void removeContact(String name) {
-        Iterator<Contact> iterator = contacts.iterator();
-        while (iterator.hasNext()) {
-            Contact contact = iterator.next();
-            if (contact.getName().equals(name)) {
-                iterator.remove();
-                System.out.println("Contact removed: " + name);
-                return;
-            }
+public class Program {
+        // Main method for testinbg
+        public static void main(String[] args) {
+            // Create a ContactManager object
+            ContactManager manager = new ContactManager();
+    
+            // Add contacts
+            manager.addContact(new Contact("Alaadin", "alaadin@trentu.ca", "123-456-7890"));
+            manager.addContact(new Contact("Bob", "bob@example.com", "098-765-4321"));
+    
+            // List contacts
+            manager.listContacts();
+    
+            // Remove a contact
+            manager.removeContact("Alaadin");
+    
+            // List contacts again to see the change
+            manager.listContacts();
         }
-        System.out.println("Contact not found: " + name);
-    }
-
-    // Method to list all Contacts
-    public void listContacts() {
-        if (contacts.isEmpty()) {
-            System.out.println("No contacts available.");
-        } else {
-            System.out.println("List of Contacts:");
-            for (Contact contact : contacts) {
-                System.out.println(contact);
-            }
-            System.out.println("------------");
-        }
-    }
 }
